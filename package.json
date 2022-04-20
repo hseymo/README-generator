@@ -1,0 +1,27 @@
+{
+  "name": "readme-generator",
+  "version": "1.0.0",
+  "description": "This is a program developed with Node and Inquirer package to create README files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hseymo/README-generator.git"
+  },
+  "keywords": [
+    "readme",
+    "node",
+    "inquirer"
+  ],
+  "author": "Haley Seymour",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hseymo/README-generator/issues"
+  },
+  "homepage": "https://github.com/hseymo/README-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.2"
+  }
+}
