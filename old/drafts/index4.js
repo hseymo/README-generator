@@ -97,39 +97,39 @@ inquirer.prompt([
 
     const { title, license, licenselink, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email } = data; 
 
+    const screenshotArray = (...answers) => {
+        let mdScreenshot = ``;
+        for (let answer of answers) {
+            if (answer.trim()) {
+                mdScreenshot.push(
+`![Screenshot](${answer})<br>`
+                )
+            }
+        }
+        console.log(mdScreenshot);
+    }
+
+    // const generateScreenshots = (sArray) => {
+    //     let mdScreenshot =
+    // `Screenshots =`;
+    //     if (!sArray) {
+    //         mdScreenshot.push(
+    // `No screenshots provided for this project`
+    //     )} else {
+    //     for (const item of sArray)
+    //         mdScreenshot.push(
+    // `![Screenshot](${item})<br>`
+    //     )}
+    //     return mdScreenshot;
+    // }
+
+    screenshotArray(screenshotone, screenshottwo, screenshotthree)
+
     fs.writeFile(filename, generateMD(title, license, licenselink, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email), (err) =>
         err ? console.log(err) : console.log('Success!')
     );
 })
 
-
-const generateScreenshots = (one, two, three) => {
-    let mdScreenshot;
-    if (one.trim() && two.trim() && three.trim()) {
-        mdScreenshot = 
-`
-![Screenshot](${one})<br>
-![Screenshot](${two})<br>
-![Screenshot](${three})<br>` 
-        return mdScreenshot;
-    } else if (one.trim() && two.trim()) {
-        mdScreenshot =
-`
-![Screenshot](${one})<br>
-![Screenshot](${two})<br>`
-        return mdScreenshot;
-    } else if (one.trim()) {
-        mdScreenshot =
-`
-![Screenshot](${one})<br>`
-        return mdScreenshot;
-    } else {
-        mdScreenshot =
-`
-No screenshots provided.<br>`
-        return mdScreenshot;
-    }
-    }
 
 const generatePageLink = (link) => {
     let deployedLink;
@@ -145,7 +145,7 @@ This project is not deployed. <br>`
     return deployedLink;
 }
     
-const generateMD = (title, license, licenselink, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email) => {
+const generateMD = (title, license, licenselink, installation, packages, description, deployed, screenshots, usage, contribution, test, github, email) => {
     let mdContent = 
 `# **${title}** 
 
@@ -193,7 +193,7 @@ ${description} <br>`
 --- 
 ` 
 
-+ generateScreenshots(screenshotone, screenshottwo, screenshotthree) +
++ generateScreenshots(screenshots) +
 
 `<br>
 
