@@ -49,22 +49,22 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'deployed',
-        message: 'What is the URL for your deployed project?',
+        message: 'What is the URL for your deployed project? If this project is not deployed, leave blank.',
     },
     {
         type: 'input',
         name: 'screenshotone',
-        message: 'What is the link for your first screenshot?',
+        message: 'What is the link for your first screenshot? If you do not wish to include screenshots, leave all prompts blank.',
     },
     {
         type: 'input',
         name: 'screenshottwo',
-        message: 'What is the link for your second screenshot?',
+        message: 'What is the link for your second screenshot? If you do not wish to include a second screenshot, leave blank.',
     },
     {
         type: 'input',
         name: 'screenshotthree',
-        message: 'What is the link for your third screenshot?',
+        message: 'What is the link for your third screenshot? If you do not wish to include a third screenshot, leave blank.',
     },
     {
         type: 'input',
@@ -102,11 +102,54 @@ inquirer.prompt([
     );
 })
 
+
+const generateScreenshots = (one, two, three) => {
+    let mdScreenshot;
+    if (one.trim() && two.trim() && three.trim()) {
+        mdScreenshot = 
+`
+![Screenshot](${one})<br>
+![Screenshot](${two})<br>
+![Screenshot](${three})<br>` 
+        return mdScreenshot;
+    } else if (one.trim() && two.trim()) {
+        mdScreenshot =
+`
+![Screenshot](${one})<br>
+![Screenshot](${two})<br>`
+        return mdScreenshot;
+    } else if (one.trim()) {
+        mdScreenshot =
+`
+![Screenshot](${one})<br>`
+        return mdScreenshot;
+    } else {
+        mdScreenshot =
+`
+No screenshots provided.<br>`
+        return mdScreenshot;
+    }
+    }
+
+const generatePageLink = (link) => {
+    let deployedLink;
+    if (link) {
+        deployedLink =
+`<br>
+Please click this [link](${link}) to view the deployed application. <br>`
+    } else {
+        deployedLink =
+`<br>
+This project is not deployed. <br>`
+    }
+    return deployedLink;
+}
+    
 const generateMD = (title, license, licenselink, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email) => {
     let mdContent = 
 `# **${title}** 
 
-## **Table of Contents:**
+## **Table of Contents**
 ---
 - [License](#license)
 - [Installation](#installation)
@@ -120,55 +163,53 @@ const generateMD = (title, license, licenselink, installation, packages, descrip
 
 <br>
 
-### **License:** 
+### **License** 
 ---
 [${license}](${licenselink})
 
 <br>
 
-### **Installation:** 
+### **Installation** 
 ---
 ${installation}
 
 <br>
 
-### **Packages:** 
+### **Packages** 
 ---
 ${packages}
 
 <br>
 
-### **Description:**
+### **Description**
 ---
-${description}
+${description} <br>` 
 
-Please click this [link](${deployed}) to view the deployed application.
++ generatePageLink(deployed) +
 
-<br>
+`<br>
 
-### **Screenshots:**
----
-![Screenshot]({${screenshotone}})
-<br><br>
-![Screenshot]({${screenshottwo}})
-<br><br>
-![Screenshot]({${screenshotthree}})
+### **Screenshots**
+--- 
+` 
 
-<br>
++ generateScreenshots(screenshotone, screenshottwo, screenshotthree) +
 
-### **Usage:** 
+`<br>
+
+### **Usage** 
 ---
 ${usage}
 
 <br>
 
-### **Contributing:** 
+### **Contributing** 
 ---
 ${contribution}
 
 <br>
 
-### **Tests:** 
+### **Tests** 
 ---
 ${test}
 
