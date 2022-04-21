@@ -1,44 +1,75 @@
-#${FILENAME} 
-<br>
+# **${title}** 
 
-Table of Contents:
+## **Table of Contents:**
+---
 - License
-- Installation Instructions
+- Installation
 - Packages
 - Description
-- Usage Information
-- Contribution Guidelines
-- Test Instructions
+- Screenshots
+- Usage
+- Contributing
+- Tests
 - Questions? 
 
 <br>
-License: <br>
-[${LICENSE}](./${LICENSELINK})
+
+### **License:** 
+---
+[${license}](${licenselink})
 
 <br>
-Installation Instructions: <br> 
-${INSTALLATION}
+
+### **Installation:** 
+---
+${installation}
 
 <br>
-Packages: <br>
-${PACKAGES}
+
+### **Packages:** 
+---
+${packages}
 
 <br>
-Description: <br>
-${DESCRIPTION}
+
+### **Description:**
+---
+${description}
+
+Please click this [link](${deployed}) to view the deployed application.
 
 <br>
-Usage Information: <br>
-${USAGE}
+
+### **Screenshots:**
+---
+![Screenshot]({${screenshotone}})
+<br><br>
+![Screenshot]({${screenshottwo}})
+<br><br>
+![Screenshot]({${screenshotthree}})
 
 <br>
-Contribution Guidelines: <br>
-${CONTRIBUTiON}
+
+### **Usage:** 
+---
+${usage}
 
 <br>
-Test Instructions: <br>
-${TEST}
+
+### **Contributing:** 
+---
+${contribution}
 
 <br>
-Questions? <br>
-Please contact me on Github at [${GITUSER}](${GITURL}) or by [email](${email}). 
+
+### **Tests:** 
+---
+${test}
+
+<br>
+
+### **Questions?** 
+---
+Please contact me on Github at [${github}](https://github.com/${github}) or by [email](mailto:${email}). 
+
+
