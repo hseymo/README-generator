@@ -1,12 +1,14 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
+// read the license document and save to variable
 let readLicense;
 
 fs.readFile('./LICENSE', 'utf8', (error, data) =>
 error ? console.error(error) : readLicense = data
 );
 
+// prompt user with questions in commandline
 inquirer.prompt([
     {
         type: 'input',
@@ -84,16 +86,16 @@ inquirer.prompt([
     },
 ])
 .then((data) => {
-
+// destructure data object
     const { title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email } = data; 
-
+// create filename - instructed user to change to README at later time in command
     const filename = `./dist/${title}.md`;
-
+// write file and return error if occurs
     fs.writeFile(filename, generateMD(readLicense, title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email), (err) =>
         err ? console.log(err) : console.log('Success!')
     );
 })
-
+// choose text for if deployed link is provided or not
 const generatePageLink = (link) => {
     let deployedLink;
     if (link) {
@@ -107,7 +109,7 @@ This project is not deployed. <br>`
     }
     return deployedLink;
 }
-
+// add section for screenshots under usage in smaller heading if desired; placeholder to input URL
 const generateScreenshots = (screenshots) => {
     let mdScreenshot;
     if (screenshots == true) {
@@ -125,6 +127,7 @@ const generateScreenshots = (screenshots) => {
     return mdScreenshot;
 }    
     
+// generate markdown content with template literals
 const generateMD = (readLicense, title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email) => {
     let mdContent = 
 `# **${title}**
