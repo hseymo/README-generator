@@ -49,7 +49,7 @@ SOFTWARE.
 
 ### **Installation** 
 ---
-To use this program, please clone this repository from Github. In your terminal, run "git clone URL". Change directory into the new folder. Run "npm install" as this program includes a package.json file that includes all dependencies needed (in this case inquirer). Open the program with your favorite text/code editor.
+To use this program, please fork and clone this repository from Github. In your terminal, run "git clone URL". Change directory into the new folder. Run "npm install" as this program includes a package.json file that includes all dependencies needed (in this case inquirer). Open the program with your favorite text/code editor.
 
 <br>
 
@@ -67,6 +67,8 @@ This project is not deployed. <br><br>
 ### **Usage** 
 ---
 To use this program, open the "index.js" file in your integrated terminal. Run the command "node index.js" and the prompted questions will begin. If you don't have a good answer to a question yet - don't worry! You can add directly to the Markdown file later. It will produce a new file in the 'dist' folder. Copy or move this file into the program it is intended for!  <br>
+
+To view a video of how this program works, please click [here](https://drive.google.com/file/d/1RXtAzka_OfWFJ_2IG2qwv6WjaV36XWaI/view).
 
 ### **Screenshots**
 --- 

@@ -11,7 +11,7 @@ inquirer.prompt([
     {
         type: 'input',
         name: 'title',
-        message: 'What is the title of your project?',
+        message: 'What is the title of your project? Please note, this will be your filename for now. Please change filename to "README" when moved to your project folder.',
     },
     {
         type: 'list',
@@ -60,7 +60,7 @@ inquirer.prompt([
     {
         type: 'confirm',
         name: 'screenshots',
-        message: 'Would you like to conclude a screenshot section? If yes, be sure to add links directly to the md file.',
+        message: 'Would you like to include a screenshot section? If yes, be sure to add links directly to the markdown file.',
     },
     {
         type: 'input',
@@ -84,9 +84,10 @@ inquirer.prompt([
     },
 ])
 .then((data) => {
-    const filename = `./dist/README.md`;
 
     const { title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email } = data; 
+
+    const filename = `./dist/${title}.md`;
 
     fs.writeFile(filename, generateMD(readLicense, title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email), (err) =>
         err ? console.log(err) : console.log('Success!')
@@ -116,6 +117,7 @@ const generateScreenshots = (screenshots) => {
 ### **Screenshots**
 --- 
 ![screenshot](ADD URL HERE)
+<br>
 `
     } else {
         mdScreenshot = ``;
