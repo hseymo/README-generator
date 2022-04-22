@@ -54,23 +54,13 @@ inquirer.prompt([
     },
     {
         type: 'input',
-        name: 'screenshotone',
-        message: 'What is the link for your first screenshot? If you do not wish to include screenshots, leave all prompts blank.',
-    },
-    {
-        type: 'input',
-        name: 'screenshottwo',
-        message: 'What is the link for your second screenshot? If you do not wish to include a second screenshot, leave blank.',
-    },
-    {
-        type: 'input',
-        name: 'screenshotthree',
-        message: 'What is the link for your third screenshot? If you do not wish to include a third screenshot, leave blank.',
-    },
-    {
-        type: 'input',
         name: 'usage',
         message: 'Please write any information for usage:',
+    },
+    {
+        type: 'confirm',
+        name: 'screenshots',
+        message: 'Would you like to conclude a screenshot section? If yes, be sure to add links directly to the md file.',
     },
     {
         type: 'input',
@@ -94,43 +84,14 @@ inquirer.prompt([
     },
 ])
 .then((data) => {
-    const filename = `${data.title}.md`;
+    const filename = `./dist/README.md`;
 
-    const { title, license, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email } = data; 
+    const { title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email } = data; 
 
-    fs.writeFile(filename, generateMD(readLicense, title, license, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email), (err) =>
+    fs.writeFile(filename, generateMD(readLicense, title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email), (err) =>
         err ? console.log(err) : console.log('Success!')
     );
 })
-
-
-const generateScreenshots = (one, two, three) => {
-    let mdScreenshot;
-    if (one.trim() && two.trim() && three.trim()) {
-        mdScreenshot = 
-`
-![Screenshot](${one})<br>
-![Screenshot](${two})<br>
-![Screenshot](${three})<br>` 
-        return mdScreenshot;
-    } else if (one.trim() && two.trim()) {
-        mdScreenshot =
-`
-![Screenshot](${one})<br>
-![Screenshot](${two})<br>`
-        return mdScreenshot;
-    } else if (one.trim()) {
-        mdScreenshot =
-`
-![Screenshot](${one})<br>`
-        return mdScreenshot;
-    } else {
-        mdScreenshot =
-`
-No screenshots provided.<br>`
-        return mdScreenshot;
-    }
-    }
 
 const generatePageLink = (link) => {
     let deployedLink;
@@ -145,8 +106,24 @@ This project is not deployed. <br>`
     }
     return deployedLink;
 }
+
+const generateScreenshots = (screenshots) => {
+    let mdScreenshot;
+    if (screenshots == true) {
+        mdScreenshot =
+`<br>
+
+### **Screenshots**
+--- 
+ADD LINKS HERE
+`
+    } else {
+        mdScreenshot = ``;
+    }
+    return mdScreenshot;
+}    
     
-const generateMD = (readLicense, title, license, installation, packages, description, deployed, screenshotone, screenshottwo, screenshotthree, usage, contribution, test, github, email) => {
+const generateMD = (readLicense, title, license, installation, packages, description, deployed, usage, screenshots, contribution, test, github, email) => {
     let mdContent = 
 `# **${title}**
 
@@ -158,7 +135,6 @@ const generateMD = (readLicense, title, license, installation, packages, descrip
 - [Installation](#installation)
 - [Packages](#packages)
 - [Description](#description)
-- [Screenshots](#screenshots)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Tests](#tests)
@@ -168,7 +144,7 @@ const generateMD = (readLicense, title, license, installation, packages, descrip
 
 ### **License** 
 ---
-[${license}](./LICENSE) <br>
+[${license}](../LICENSE) <br>
 
 ${readLicense} <br>
 
@@ -194,18 +170,13 @@ ${description} <br>`
 
 `<br>
 
-### **Screenshots**
---- 
-` 
-
-+ generateScreenshots(screenshotone, screenshottwo, screenshotthree) +
-
-`<br>
-
 ### **Usage** 
 ---
-${usage}
+${usage}`
 
++ generateScreenshots(screenshots) +
+
+`
 <br>
 
 ### **Contributing** 

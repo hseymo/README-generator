@@ -8,8 +8,8 @@
   - [### **Installation**](#-installation)
   - [### **Packages**](#-packages)
   - [### **Description**](#-description)
-  - [### **Screenshots**](#-screenshots)
   - [### **Usage**](#-usage)
+  - [### **Screenshots**](#-screenshots)
   - [### **Contributing**](#-contributing)
   - [### **Tests**](#-tests)
   - [### **Questions?**](#-questions)
@@ -42,19 +42,15 @@ Please click this [link](${deployed}) to view the deployed application.
 
 <br>
 
-### **Screenshots**
----
-![Screenshot]({${screenshotone}})
-<br><br>
-![Screenshot]({${screenshottwo}})
-<br><br>
-![Screenshot]({${screenshotthree}})
-
-<br>
-
 ### **Usage** 
 ---
 ${usage}
+
+<br>
+
+### **Screenshots**
+---
+ADD LINKS HERE
 
 <br>
 
