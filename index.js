@@ -115,7 +115,7 @@ const generateScreenshots = (screenshots) => {
 
 ### **Screenshots**
 --- 
-ADD LINKS HERE
+![screenshot](ADD URL HERE)
 `
     } else {
         mdScreenshot = ``;
@@ -142,7 +142,7 @@ const generateMD = (readLicense, title, license, installation, packages, descrip
 
 <br>
 
-### **License** 
+## **License** 
 ---
 [${license}](../LICENSE) <br>
 
@@ -150,19 +150,19 @@ ${readLicense} <br>
 
 <br>
 
-### **Installation** 
+## **Installation** 
 ---
 ${installation}
 
 <br>
 
-### **Packages** 
+## **Packages** 
 ---
 ${packages}
 
 <br>
 
-### **Description**
+## **Description**
 ---
 ${description} <br>` 
 
@@ -170,7 +170,7 @@ ${description} <br>`
 
 `<br>
 
-### **Usage** 
+## **Usage** 
 ---
 ${usage}`
 
@@ -179,19 +179,19 @@ ${usage}`
 `
 <br>
 
-### **Contributing** 
+## **Contributing** 
 ---
 ${contribution}
 
 <br>
 
-### **Tests** 
+## **Tests** 
 ---
 ${test}
 
 <br>
 
-### **Questions?** 
+## **Questions?** 
 ---
 Please contact me on Github at [${github}](https://github.com/${github}) or by [email](mailto:${email}).`
 
