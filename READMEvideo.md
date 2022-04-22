@@ -1,20 +1,18 @@
-# **READMEvideo**
+# **Sample README from video**
 
 ![Badge](https://img.shields.io/badge/license-MIT-blue)
 
 ## **Table of Contents**
 ---
-- [**READMEvideo**](#readmevideo)
-  - [## **Table of Contents**](#-table-of-contents)
-  - [## **License**](#-license)
-  - [## **Installation**](#-installation)
-  - [## **Packages**](#-packages)
-  - [## **Description**](#-description)
-  - [## **Usage**](#-usage)
-  - [### **Screenshots**](#-screenshots)
-  - [## **Contributing**](#-contributing)
-  - [## **Tests**](#-tests)
-  - [## **Questions?**](#-questions)
+  - [License](#license)
+  - [Installation](#installation)
+  - [Packages](#packages)
+  - [Description](#description)
+  - [Usage](#usage)
+  - [Screenshots](#screenshots)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions?](#questions)
 
 <br>
 
