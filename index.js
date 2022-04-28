@@ -134,40 +134,40 @@ const generateMD = (readLicense, title, license, installation, packages, descrip
 
 ![Badge](https://img.shields.io/badge/license-${license.split(' ')[0]}-blue)
 
-## **Table of Contents**
+## Table of Contents
 ---
-- [License](#license)
-- [Installation](#installation)
-- [Packages](#packages)
-- [Description](#description)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
+* [License](#license)
+* [Installation](#installation)
+* [Packages](#packages)
+* [Description](#description)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
 <br>
 
-## **License** 
+## License 
 ---
-[${license}](../LICENSE) <br>
+[${license}](./LICENSE) <br>
 
 ${readLicense} <br>
 
 <br>
 
-## **Installation** 
+## Installation
 ---
 ${installation}
 
 <br>
 
-## **Packages** 
+## Packages
 ---
 ${packages}
 
 <br>
 
-## **Description**
+## Description
 ---
 ${description} <br>` 
 
@@ -175,7 +175,7 @@ ${description} <br>`
 
 `<br>
 
-## **Usage** 
+## Usage 
 ---
 ${usage}`
 
@@ -184,19 +184,19 @@ ${usage}`
 `
 <br>
 
-## **Contributing** 
+## Contributing 
 ---
 ${contribution}
 
 <br>
 
-## **Tests** 
+## Tests
 ---
 ${test}
 
 <br>
 
-## **Questions?** 
+## Questions?
 ---
 Please contact me on Github at [${github}](https://github.com/${github}) or by [email](mailto:${email}).`
 

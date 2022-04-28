@@ -20,8 +20,6 @@
 ---
 [MIT License](./LICENSE) <br>
 
-MIT License
-
 Copyright (c) 2022 Haley Seymour
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -47,13 +45,24 @@ SOFTWARE.
 
 ### **Installation** 
 ---
-To use this program, please fork and clone this repository from Github. In your terminal, run "git clone URL". Change directory into the new folder. Run "npm install" as this program includes a package.json file that includes all dependencies needed (in this case inquirer). Open the program with your favorite text/code editor.
+To install this project: 
+1. Start by forking this repository on Github. 
+2. Clone this project to your machine by using the "git clone + URL" command. 
+3. Open the project with your favorite text editor, like VS Code (in your terminal, first type "cd foldername" then "code ."). 
+4. Install Node.js from their website, if you have not already. Here are some additional [instructions](https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs).
+5. This project includes a package.json file that specifies dependencies for this project, so be sure to run "npm install". This will install the packages specified in the next section. 
 
 <br>
 
 ### **Packages** 
 ---
-Inquirer
+General Technologies:
+- Javascript
+- Node.js
+
+NPM Packages
+- Inquirer
+- fs
 
 <br>
 
@@ -70,8 +79,13 @@ To view a video of how this program works, please click [here](https://drive.goo
 
 ### **Screenshots**
 --- 
+Commandline Prompts
 ![commandline](./assets/screenshots/commandline.png)
 <br><br>
+Commandline GIF
+![commandlineGIF](./assets/screenshots/gif.gif)
+<br><br>
+Output file example
 ![outputfile](./assets/screenshots/output1.png)
 <br><br>
 ![outputfile](./assets/screenshots/output2.png)

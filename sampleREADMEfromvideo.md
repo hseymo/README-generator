@@ -4,25 +4,21 @@
 
 ## **Table of Contents**
 ---
-- [**Sample-README-from-videoo**](#sample-readme-from-videoo)
-  - [## **Table of Contents**](#-table-of-contents)
-  - [## **License**](#-license)
-  - [## **Installation**](#-installation)
-  - [## **Packages**](#-packages)
-  - [## **Description**](#-description)
-  - [## **Usage**](#-usage)
-  - [### **Screenshots**](#-screenshots)
-  - [## **Contributing**](#-contributing)
-  - [## **Tests**](#-tests)
-  - [## **Questions?**](#-questions)
+  - [License](#license)
+  - [Installation](#installation)
+  - [Packages](#packages)
+  - [Description](#description)
+  - [Usage](#usage)
+  - [Screenshots](#screenshots)
+  - [Contributing](#contributing)
+  - [Tests](#tests)
+  - [Questions?](#questions)
 
 <br>
 
 ## **License** 
 ---
-[MIT License](../LICENSE) <br>
-
-MIT License
+[MIT License](./LICENSE) <br>
 
 Copyright (c) 2022 Haley Seymour
 
