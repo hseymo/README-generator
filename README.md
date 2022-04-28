@@ -60,7 +60,7 @@ General Technologies:
 - Javascript
 - Node.js
 
-NPM Packages
+NPM Packages:
 - Inquirer
 - fs
 
@@ -82,7 +82,7 @@ To view a video of how this program works, please click [here](https://drive.goo
 Commandline Prompts
 ![commandline](./assets/screenshots/commandline.png)
 <br><br>
-Commandline GIF
+Commandline GIF <br>
 ![commandlineGIF](./assets/screenshots/gif.gif)
 <br><br>
 Output file example
